@@ -17,5 +17,4 @@ COPY ./apache-config/000-default.conf /etc/apache2/sites-available/000-default.c
 
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
-RUN apache2ctl restart
 RUN chown www-data:www-data /var/www/html
