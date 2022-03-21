@@ -11,7 +11,7 @@ RUN apt-get clean
 
 WORKDIR /var/www/html
 
-COPY ./RunEnvironment . 
+COPY . . 
 
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
