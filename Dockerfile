@@ -11,9 +11,11 @@ RUN apt-get clean
 
 WORKDIR /var/www/html
 
-COPY . . 
+COPY run.php .
+COPY ./apache-config/ports.conf /etc/apache2/ports.conf
+COPY ./apache-config/000-default.conf /etc/apache2/sites-available/000-default.conf 
 
 EXPOSE 80
-CMD ["apache2ctl", "-D", "FOREGROUND"]
+CMD docker-php-entrypoint apache2-foreground
 RUN apache2ctl restart
 RUN chown www-data:www-data /var/www/html
