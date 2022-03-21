@@ -27,7 +27,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/codetricsCompile:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/codetricscompile:latest
           
       - name: Deploy Docker container to Heroku
         uses: gonuit/heroku-docker-deploy@v1.3.3
