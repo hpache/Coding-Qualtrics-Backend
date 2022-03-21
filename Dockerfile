@@ -16,6 +16,6 @@ COPY ./apache-config/ports.conf /etc/apache2/ports.conf
 COPY ./apache-config/000-default.conf /etc/apache2/sites-available/000-default.conf 
 
 EXPOSE 80
-CMD docker-php-entrypoint apache2-foreground
+CMD ["apache2ctl", "-D", "FOREGROUND"]
 RUN apache2ctl restart
 RUN chown www-data:www-data /var/www/html
